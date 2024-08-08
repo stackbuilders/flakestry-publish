@@ -44,6 +44,8 @@ runs:
         OIDC=$(echo $RESPONSE | jq -r '.value')
         README=$(find . -iname "README*" -maxdepth 1 -print -quit)
 
+        cat metadata.json
+
         nix run nixpkgs#jo \
           metadata=:metadata.json \
           metadata_error=@metadata.err \
